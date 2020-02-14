@@ -1,0 +1,364 @@
+{
+	"info": {
+		"_postman_id": "0f1e7a3f-9d86-4daf-8a03-368dfafde1bc",
+		"name": "Postman Collection",
+		"description": "Creating collection for subscription docs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Plan",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Client-Id",
+						"value": "{{appId}}"
+					},
+					{
+						"key": "X-Client-Secret",
+						"value": "{{secretKey}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"planId\":\"0100\",\n\t\"planName\":\"GymMembership\",\n\t\"type\": \"PERIODIC\",\n\t\"amount\" :100,\n\t\"intervalType\": \"month\",\n\t\"intervals\": 1\n}"
+				},
+				"url": {
+					"raw": "{{Base URL}}/api/v2/subscription-plans",
+					"host": [
+						"{{Base URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"subscription-plans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Subscription",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Client-Id",
+						"value": "{{appId}}"
+					},
+					{
+						"key": "X-Client-Secret",
+						"value": "{{secretKey}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"subscriptionId\" : \"SUB01\",\n\t\"planId\": \"0100\",\n\t\"customerEmail\":\"priyal@gmail.com\",\n\t\"customerPhone\": \"93465577484\",\n\t\"expiresOn\" : \"2019-05-30 23:59:59\",\n\t\"returnUrl\": \"http://localhost/handleResponse.php\"\n} "
+				},
+				"url": {
+					"raw": "{{Base URL}}/api/v2/subscriptions",
+					"host": [
+						"{{Base URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"subscriptions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Seamless Subscription",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Client-Id",
+						"value": "{{appId}}"
+					},
+					{
+						"key": "X-Client-Secret",
+						"value": "{{secretKey}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"subscriptionId\" : \"SUB02\",\n\t\"planId\": \"0100\",\n\t\"customerEmail\":\"priyal@gmail.com\",\n\t\"customerPhone\": \"93465577484\",\n\t\"expiresOn\" : \"2019-05-30 23:59:59\",\n\t\"returnUrl\": \"http://localhost/handleResponse.php\"\n} "
+				},
+				"url": {
+					"raw": "{{Base URL}}/api/v2/subscriptions",
+					"host": [
+						"{{Base URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"subscriptions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Subscription Details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-client-id",
+						"value": "{{appId}}"
+					},
+					{
+						"key": "x-client-secret",
+						"value": "{{secretKey}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{Base URL}}/api/v2/subscriptions/:subReferenceId",
+					"host": [
+						"{{Base URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"subscriptions",
+						":subReferenceId"
+					],
+					"variable": [
+						{
+							"key": "subReferenceId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Subscription Payments",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-client-Id",
+						"value": "{{appId}}"
+					},
+					{
+						"key": "x-client-secret",
+						"value": "{{secretKey}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{Base URL}}/api/v2/subscriptions/:subReferenceId/payments?lastId=:lastId&count=:count",
+					"host": [
+						"{{Base URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"subscriptions",
+						":subReferenceId",
+						"payments"
+					],
+					"query": [
+						{
+							"key": "lastId",
+							"value": ":lastId"
+						},
+						{
+							"key": "count",
+							"value": ":count"
+						}
+					],
+					"variable": [
+						{
+							"key": "subReferenceId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Subscription Payment",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Client-Id",
+						"value": "{{appId}}"
+					},
+					{
+						"key": "X-Client-Secret",
+						"value": "{{secretKey}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{Base URL}}/api/v2/subscriptions/:subReferenceId/payments/:paymentId",
+					"host": [
+						"{{Base URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"subscriptions",
+						":subReferenceId",
+						"payments",
+						":paymentId"
+					],
+					"variable": [
+						{
+							"key": "subReferenceId",
+							"value": ""
+						},
+						{
+							"key": "paymentId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel Subscription",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Client-Id",
+						"value": "{{appId}}"
+					},
+					{
+						"key": "X-Client-Secret",
+						"value": "{{secretKey}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{Base URL}}/api/v2/subscriptions/:subReferenceId/cancel",
+					"host": [
+						"{{Base URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"subscriptions",
+						":subReferenceId",
+						"cancel"
+					],
+					"variable": [
+						{
+							"key": "subReferenceId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Charge Subscription",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-client-Id",
+						"value": "{{appId}}",
+						"type": "text"
+					},
+					{
+						"key": "x-client-secret",
+						"value": "{{secretKey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"amount\" : 100\n}"
+				},
+				"url": {
+					"raw": "{{Base URL}}/api/v2/subscriptions/:subReferenceId/charge",
+					"host": [
+						"{{Base URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"subscriptions",
+						":subReferenceId",
+						"charge"
+					],
+					"variable": [
+						{
+							"key": "subReferenceId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,384 @@
+
+@font-face {
+    font-family: "openSans";
+    src: url('../fonts/Open_Sans/OpenSans-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    }
+    
+    @font-face {
+    font-family: "openSans";
+    src: url('../fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    }
+    
+    @font-face {
+    font-family: "openSans";
+    src: url('../fonts/Open_Sans/OpenSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    }
+
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap');
+
+
+html {
+    color: rgb(51,51,51);
+    font-family: 'openSans','Montserrat', sans-serif !important;
+    font-size: 14px;
+    line-height: 22px;
+    height: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    margin:0;
+    padding:0;
+    -moz-osx-font-smoothing: grayscale;
+        
+}
+body {
+    margin:0;
+    padding:0;
+    height: 100%;
+    scroll-padding-top: 160px;
+    margin: 65px auto !important;
+    font-family: 'openSans' !important;
+}
+
+/* Height for gatsby and reach router wrapper divs */
+#___gatsby, #___gatsby > * {
+    height: 100%;
+    margin:0;
+    padding:0;
+}
+
+tHead{
+    border-bottom: 1px solid silver;
+}
+a{
+    text-decoration: none;
+}
+
+/*home page design*/
+
+
+section{
+    margin: 40px 0;
+}
+img{
+    width:auto;
+}
+.primary_btn{
+    color: #fff;
+    width: 100%;
+    border: none;
+    height: 36px;
+    display: inline-flex;
+    font-size: 14px;
+    font-style: normal;
+    align-items: center;
+    font-family: OpenSans;
+    font-weight: 600;
+    line-height: 1.86;
+    font-stretch: normal;
+    border-radius: 8px;
+    justify-content: center;
+    background-color: #7d44f0;
+}
+
+.banner{
+    min-height: 600px;
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    background-image: url(../images/landing/banner.svg);
+    background-origin: border-box;
+    background-position-x: right;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    margin: 0;
+
+}
+.home_heading{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    font-weight: normal !important;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    color: #434343;
+}
+
+.home_text{
+    width: 402px;
+    height: 96px;
+    opacity: 0.9;
+    font-family: OpenSans;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 0.8px;
+    color: #999999;
+}
+.cardtext{
+    opacity: 0.9;
+  font-family: OpenSans;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: 0.8px;
+  text-align: center;
+  color: #666666;
+  padding: 0 58px;
+}
+.cardtime{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #f0bc1f;
+    width: 75px;
+    height: 24px;
+    border-radius: 12px;
+    background-color: #01c84d;
+    color: white;
+    font-size: 12px;
+    display: none;
+
+}
+.web_card>div:first-child .cardtime {
+    display: block !important;
+}
+.web_inti{
+    background: #7d44f0;
+    min-height: 324px;
+    position: relative;
+    margin: 0;
+}
+.sub_heading{
+    font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.8px;
+  color: #ffffff;
+
+}
+.ecomm_list {
+width:300px;
+}
+.ecomm_li span{
+    font-family: OpenSans;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.27px;
+    color: #434343;   
+}
+.ecomm_li span:hover{
+    color: #7d44f0; 
+    border-bottom: 2px solid #f0bc1f;     
+}
+.ecomm_li  .ecomm_list_arrow img{
+    max-width: 20px;
+}
+ol li p,ul li p{
+    padding: 0px !important;
+}
+.sub_text{
+    opacity: 0.7;
+    font-family: OpenSans;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 0.8px;
+    color: #ffffff;
+}
+.youtube_video{
+    width: 500px;
+    height: 300px;
+    float:right;
+}
+.link_section{
+    margin-top: 10%;
+}
+.btn_link{
+    color: #fff;
+    width: 220px;
+    border: none;
+    height: 50px;
+    font-size: 18px;
+    font-style: normal;
+    font-family: OpenSans;
+    font-weight: 600;
+    line-height: 1.86;
+    font-stretch: normal;
+    border-radius: 8px;
+    background-color: #7d44f0;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.center_align{
+    text-align: center;
+}
+.link_heading{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.48px;
+    color: #434343;
+    text-align: center;
+}
+.main_cards{
+    position: relative;
+    bottom: -2%;
+}
+.web_card{
+    display: inline-flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding-top: 40px;
+}
+.ecomm_sub_heading{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.48px;
+    color: #434343;
+    max-width: 300px;
+}
+
+.ecommerce_sec{
+    padding: 5% 0;
+}
+.ecommerce_sec img{
+    width: 100%;
+}
+.user_section{
+background: #fafafa;
+padding: 5% 0;
+margin-top: 10%;
+margin-bottom: 0;   
+
+}
+
+.user_logo img{
+    max-width: 130px;
+    padding: 10px 30px;
+}
+
+/*card css */
+
+.cardstyle{
+    width: 280px !important;
+    height: 370px !important;
+    border-radius: 8px !important;
+    margin: 15px auto;
+    box-shadow: 0 4px 12px 0 rgba(67, 67, 67, 0.12) !important;
+}
+.card_content img{
+    height: 120px;
+    object-fit: contain;
+    max-width: 48px;
+    margin: 0 auto;
+}
+.card_content{
+    text-align: center;
+}
+
+.cardtitle{
+    font-family: OpenSans;
+    font-size: 24px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    text-align: center;
+    color: #434343;
+    padding: 20px 0;
+}
+.cardlinks{
+    text-align: center;
+    display: inline-flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+ .cardlinks a{
+    height: 22px;
+  font-family: OpenSans;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color:#7d44f0;
+  padding: 5px 0;
+  border-bottom: 2px solid transparent;
+
+
+}
+.cardlinks a:hover {
+    border-bottom: 2px solid #f0bc1f;
+}
+
+@media (min-width:320px) and (max-width:767px)
+{
+    .banner {
+        min-height: 200px;
+    }
+    .home_heading {
+        font-size: 25px;
+        padding: 20px 0;
+        padding-bottom:0;
+    }
+    .ecommerce_sec img{
+        width: 100%;
+    }
+    .sub_heading,.ecomm_sub_heading{
+      font-size: 30px;
+      padding: 10px 0;
+    }
+    .home_text {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px 0;
+    }
+    .web_card {
+        justify-content: center;
+        width: 100%;
+        padding-top: 10px;
+        flex-flow: column;
+        align-items: center;
+    }
+    .web_card>div{
+        margin-left:0px !important;
+    }
+    aside {
+        background-position-x: 0px !important;
+        padding: 15px 46px !important;
+        padding-left: 15% !important;
+    }
+    .ecommerce_sec img{
+    padding: 30px 0;
+    }
+}

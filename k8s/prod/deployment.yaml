@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cashfree-docs
+  namespace: cashfree-docs
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: 
+      maxSurge: 2
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: cashfree-docs
+      version: v1.0.0
+  template:
+    metadata:  
+      labels:
+        app: cashfree-docs
+        version: v1.0.0
+    spec:
+      imagePullSecrets:
+        - name: regsecret
+      containers:
+        - name: cashfree-docs
+          image: docker-registry.cashfree.com/cashfree-docs:1.0.1.19
+          imagePullPolicy: Always
+          resources:
+            limits:
+              memory: ".5Gi"
+              cpu: "500m"
+            requests:
+              memory: "256Mi"
+              cpu: "350m"
+          ports:
+            - name: app
+              containerPort: 80
